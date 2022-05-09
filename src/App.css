@@ -1,0 +1,12 @@
+@import url("./Assets/fontiran.css");
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  font-family: "iranyekan", "roboto", sans-serif;
+}

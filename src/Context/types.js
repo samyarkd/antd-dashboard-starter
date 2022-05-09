@@ -1,0 +1,2 @@
+// Sidebar
+export const SIDEBAR_COLLAPSED = "SIDEBAR_COLLAPSED";
