@@ -1,5 +1,6 @@
 import { Layout } from "antd";
 import React from "react";
+import { Outlet } from "react-router-dom";
 import AppContent from "./Components/AppContent";
 import AppFooter from "./Components/AppFooter";
 import AppHeader from "./Components/AppHeader";
@@ -19,7 +20,9 @@ class AppLayout extends React.Component {
         <AppSidebar />
         <Layout className="site-layout">
           <AppHeader />
-          <AppContent />
+          <AppContent>
+            <Outlet />
+          </AppContent>
           <AppFooter />
         </Layout>
       </Layout>

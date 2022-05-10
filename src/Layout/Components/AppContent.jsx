@@ -1,22 +1,19 @@
-import { Breadcrumb, Layout } from "antd";
+import { Layout } from "antd";
 import React from "react";
 const { Content } = Layout;
 
-function AppContent() {
+function AppContent({ children }) {
   return (
     <Content
       style={{
-        margin: "0 16px",
+        margin: "0 1.6rem",
       }}
     >
-      <Breadcrumb
+      <div
         style={{
-          margin: "16px 0",
+          margin: "2rem 0",
         }}
-      >
-        <Breadcrumb.Item>User</Breadcrumb.Item>
-        <Breadcrumb.Item>Bill</Breadcrumb.Item>
-      </Breadcrumb>
+      />
       <div
         className="site-layout-background"
         style={{
@@ -24,7 +21,8 @@ function AppContent() {
           minHeight: 360,
         }}
       >
-        Bill is a cat.
+        {/* Content */}
+        {children}
       </div>
     </Content>
   );

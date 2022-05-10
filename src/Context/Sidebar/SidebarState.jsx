@@ -10,6 +10,7 @@ const SidebarState = ({ children }) => {
 
   const [state, dispatch] = useReducer(SidebarReducer, initialState);
 
+  // Function to toggle sidebar
   const toggle_sidebar = () => {
     dispatch({ type: SIDEBAR_COLLAPSED });
   };

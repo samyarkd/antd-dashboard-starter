@@ -1,24 +1,17 @@
-import { PieChartOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
-import React from "react";
+import React, { useContext } from "react";
 import TomanCashLogo from "../../Assets/Images/TomanCashLogo.png";
+import RoutesContext from "../../Context/Routes/RoutesContext";
 import SidebarContext from "../../Context/Sidebar/SidebarContext";
 
 const { Sider } = Layout;
 
-function getItem(label, key, icon, children) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  };
-}
-
-const items = [getItem("داشبورد", "1", <PieChartOutlined />)];
-
 function AppSidebar() {
-  const { collapsed, toggle_sidebar } = React.useContext(SidebarContext);
+  const state = useContext(RoutesContext);
+  const { routes } = state;
+  const { collapsed, toggle_sidebar } = useContext(SidebarContext);
+
+  console.log("routes", state);
   return (
     <Sider
       breakpoint="md"
@@ -34,7 +27,7 @@ function AppSidebar() {
         defaultSelectedKeys={["1"]}
         mode="inline"
         direction="rtl"
-        items={items}
+        items={routes}
       />
     </Sider>
   );
